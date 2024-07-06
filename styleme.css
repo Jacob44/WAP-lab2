@@ -13,12 +13,12 @@ header {
     padding: 1em;
     text-align: center;
 }
+
 /* Style for main headings */
 h1 {
     font-size: 2.5em;
     font-weight: bold;
 }
-
 
 /* Style for secondary headings */
 h2 {
@@ -88,14 +88,41 @@ dl {
     border-left: 4px solid #4CAF50;
 }
 
+/* Reset margin for the first dl in each li */
+.reverse-list li dl:first-child {
+    margin-top: 0;
+}
+
+/* Style for definition term (dt) */
 dt {
     font-weight: bold;
     color: #333;
+    margin-bottom: 5px; /* Adjust spacing between terms */
 }
 
+/* Style for definition description (dd) */
 dd {
-    margin: 0 0 10px 20px;
+    margin: 0;
     color: #555;
+}
+
+/* Reverse ordered list using Flexbox */
+.reverse-list {
+    display: flex;
+    flex-direction: column-reverse;
+    counter-reset: reversed-counter; /* Reset counter for ordered list */
+}
+
+.reverse-list li {
+    display: flex;
+    align-items: flex-start;
+    counter-increment: reversed-counter; /* Increment counter for each list item */
+}
+
+.reverse-list li::before {
+    content: counter(reversed-counter) ". ";
+    font-weight: bold;
+    margin-right: 0.5em;
 }
 
 /* Style for the footer */
@@ -103,4 +130,3 @@ footer {
     margin-top: 20px;
     text-align: center;
 }
-
