@@ -40,6 +40,14 @@ p {
     line-height: 1.6;
 }
 
+/* Paragraph drop-caps */
+p::first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+    float: left;
+    margin-right: 0.1em; /* Optional: Add space between the drop-cap and the rest of the text */
+}
+
 /* Style for the unordered list */
 ul {
     list-style-type: square;
@@ -70,6 +78,24 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Style for definition list */
+dl {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4CAF50;
+}
+
+dt {
+    font-weight: bold;
+    color: #333;
+}
+
+dd {
+    margin: 0 0 10px 20px;
+    color: #555;
 }
 
 /* Style for the footer */
